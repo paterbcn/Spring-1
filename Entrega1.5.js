@@ -1,28 +1,60 @@
+
 // N1 ejercicio 1
 // Crea una funció que, en executar-la, escrigui una frase en un fitxer.
 
 const fs = require("fs")
-// opcion 1
-fs.appendFile("./Files/testN1Ej1.txt","Prueba N1 ejercio 1",(err)=>{
-    if (err){throw err};console.log("archivo creado satisfactoriamente")})
 
-// opcion 2
 
-fs.writeFile("./Files/testN1Ej1.txt","modificacion del texto generado anteriormente",(err)=>{
+
+function writeF (fileName,txt){
+    fs.writeFile(`./Files/${fileName}.txt`,txt,(err)=>{
     if (err){throw err};console.log("archivo escrito correctamente")})
+    
+}
 
 // N1 ejercicio 2
 //Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior.
 
-fs.readFile("./Files/testN1Ej1.txt","utf-8",(err,data)=>{
-if (err){throw err};console.log(data)  })
+function readF (fileName){
+    fs.readFile(`./Files/${fileName}.txt`,(err,data)=>{
+        if (err){throw err};
+        console.log(data.toString())
+    })}
 
 // N1 ejercicio 3
 // Crea una funció que comprimeixi el fitxer del nivell 1.
 
+const zlib = require("zlib")
 
+function zipFile(fileN){
+    const zipF = fileN.replace(".txt",".gz")
+    const inputFile = fs.createReadStream("./files/"+fileN)
+    const outputFile = fs.createWriteStream("./files/"+zipF)
+    inputFile.pipe(zlib.createGzip()).pipe(outputFile)
+    inputFile.on(`end`,()=>console.log("file compress"))
+}
 
+// N2 ejercicio 1
+// Crea una funció que imprimeixi recursivament un missatge per la consola amb demores d'un segon.
 
+function intervalFunc (msg){
+    setInterval(()=>console.log(msg),1000)
+}
+
+// N2 ejercicio 2
+//Crea una funció que llisti per la consola el contingut del directori d'usuari/ària de l'ordinador 
+// utilizant Node Child Processes.
+
+const userDir = process.env.userprofile
+fs.readdir(userDir,(err,files)=>{
+if (err){throw err};{
+console.log(files)}})
+
+  
+//Crea una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer del nivell 1.
+//Crea una funció que guardi els fitxers del punt anterior, ara encriptats amb l'algoritme aes-192-cbc, i esborri els fitxers inicials.
+//Crea una altra funció que desencripti i descodifiqui els fitxers de l'apartat anterior tornant a generar una còpia de l'inicial.
+// Inclou un README amb instruccions per a l'execució de cada part.
 
 
 
