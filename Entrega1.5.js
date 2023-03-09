@@ -44,11 +44,15 @@ function intervalFunc (msg){
 // N2 ejercicio 2
 //Crea una funció que llisti per la consola el contingut del directori d'usuari/ària de l'ordinador 
 // utilizant Node Child Processes.
-// https://www.geeksforgeeks.org/node-js-child-process/
-const userDir = process.env.userprofile
-fs.readdir(userDir,(err,files)=>{
-if (err){throw err};{
-console.log(files)}})
+
+
+const cp = require('child_process')
+
+const userDir = ()=>{const userdir = console.log(process.env.userprofile);
+    cp.exec("dir",userDir,(error,stdout,stderr)=>{
+            if(error){console.log(error.message)}{
+                if(stderr)console.log(stderr.message)}{
+                    console.log(stdout)   }})
 
   
 //Crea una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer del nivell 1.
@@ -101,5 +105,6 @@ function codFiles (nom){
         readSteam.pipe(crypto.createDecipheriv(algorithm,key,iv)).pipe(fs.createWriteStream(`./files/${nom}.txt`))}
     
         desencrypt("testcripto")
+        
 
 
