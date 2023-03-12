@@ -1,0 +1,14 @@
+{
+  "name": "entrega-1-6",
+  "version": "1.0.0",
+  "description": "Entrega 1.6 , Spring 1 , Itacademy , NodeJs Course",
+  "main": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
