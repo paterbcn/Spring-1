@@ -63,7 +63,7 @@ const getemployees = (id)=> {return new Promise((resolve,reject)=>{
 // N2 ejercicio 2
 
 var getSalary = (employe)=> new Promise ((resolve , reject)=>{
-                             resolve(salaries.find(ob => ob.id == employe.id ).salary)}) 
+                             resolve(salaries.find(ob => ob.id === employe.id ).salary)}) 
 
 getSalary (employees[0]).then(msg => console.log(msg))
 
