@@ -1,7 +1,7 @@
 # Proyecto Entrega 1.6 Spring 1 NodeJs
 
-The project presents a group of functions to evaluate using TDD methodology using the **Jest framework**.
-All the function are in an individual file , saved at *app* directory.
+The project presents a group of functions to evaluate using TDD methodology using the **Jest framework**.  
+All the function are in an individual file , saved at *app* directory.  
 The test file are saved at *_test_* directory. 
 
 ### Instalig Jest framawork
