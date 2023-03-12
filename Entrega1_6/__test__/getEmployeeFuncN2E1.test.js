@@ -1,11 +1,5 @@
 const funtions = require("../app/getEmployeeFuncN2E1.js")
 
-// buscar id "A" da como resultado mensaje el id tiene que ser un numero entero
-// buscar id "" da como resultado mensaje el id tiene que ser un numero entero
-// buscar id 0.5 da como resultado mensaje el id tiene que ser un numero entero positivo
-// buscar id -1 da como resultado mensaje el id tiene que ser un numero entero positivo
-// buscar id 1 da como resultado {id: 1,name: 'Linux Torvalds'}
-// buscar id 4 da como resultado el el id no se encuentra en la base
 
 
 
