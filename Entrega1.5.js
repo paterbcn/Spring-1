@@ -4,12 +4,10 @@
 
 const fs = require("fs")
 
-
-
 function writeF (fileName,txt){
     fs.writeFile(`./Files/${fileName}.txt`,txt,(err)=>{
-    if (err){throw err};console.log("archivo escrito correctamente")})
-    
+        if (err){throw err};console.log("archivo escrito correctamente")}
+    )
 }
 
 // N1 ejercicio 2
@@ -19,7 +17,8 @@ function readF (fileName){
     fs.readFile(`./Files/${fileName}.txt`,(err,data)=>{
         if (err){throw err};
         console.log(data.toString())
-    })}
+    })
+}
 
 // N1 ejercicio 3
 // Crea una funció que comprimeixi el fitxer del nivell 1.
@@ -60,7 +59,7 @@ const userDir = ()=>{const userdir = console.log(process.env.userprofile);
 //Crea una altra funció que desencripti i descodifiqui els fitxers de l'apartat anterior tornant a generar una còpia de l'inicial.
 // Inclou un README amb instruccions per a l'execució de cada part.
 
-// https://www.geeksforgeeks.org/node-js-crypto-createcipheriv-method/
+
 
 function codFiles (nom){
     const txt = fs.readFileSync(`./files/${nom}.txt`) 
@@ -73,38 +72,4 @@ function codFiles (nom){
                 
     }
 
-    const bf = require('node:buffer');
-    const fs = require("fs")
-    const crypto = require("crypto");
-    const { scryptSync } = require('node:crypto');
-    /*
     
-    const algorithm = "aes-192-cbc"
-    const key = crypto.randomBytes(32);
-    const iv = crypto.randomBytes(16)
-    */
-    const key = scryptSync(pasww,"salt",24);
-        const iv = crypto.randomBytes(16);
-    const encrypt= (nom,)=>{
-        
-        pasww = "0000"
-        
-        const algorithm = "aes-192-cbc";
-        const readSteam = fs.createReadStream(`./files/${"nom"}.txt`);
-        readSteam.pipe(crypto.createCipheriv(algorithm,key,iv)).pipe(fs.createWriteStream(`./files/${nom}cripto`))}
-    
-    //encrypt("test")
-    
-    const desencrypt= (nom,)=>{
-        
-        pasww = "0000"
-        
-        
-        const algorithm = "aes-192-cbc";
-        const readSteam = fs.createReadStream(`./files/${"nom"}`);
-        readSteam.pipe(crypto.createDecipheriv(algorithm,key,iv)).pipe(fs.createWriteStream(`./files/${nom}.txt`))}
-    
-        desencrypt("testcripto")
-        
-
-
