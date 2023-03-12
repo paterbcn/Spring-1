@@ -71,5 +71,3 @@ function codFiles (nom){
                     {console.log("hex convertion done")}})
                 
     }
-
-    
