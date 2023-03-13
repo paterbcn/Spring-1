@@ -2,7 +2,7 @@ const funtions = require("../app/addFunction.js")
 
 
 
-describe("se da un parametro correcto a la funcion"), ()=> {
+describe("se pasan todos los paramentros"), ()=> {
 
     test("calcular 0.5 + 1.3 debe dar como resultado 1.8", ()=>{
         expect(funtions.addFuntion(1.3,0.5)).toBe(1.8);
@@ -15,7 +15,7 @@ describe("se da un parametro correcto a la funcion"), ()=> {
 
 }
 
-describe("no se da un parametros correcto a la funcion"), ()=> {
+describe("se pasa un  parametro incorrecto a la funcion"), ()=> {
 
     
     test("calcular a + 3 deber dar como resultado mensaje Error solo se puede hacer operaciones entre numeros", ()=>{
@@ -33,7 +33,7 @@ describe("no se da un parametros correcto a la funcion"), ()=> {
 }
 
 
-describe("no se dan todos los parametros"), ()=> {
+describe("no se pasan todos los paramentros"), ()=> {
 
     test("calcular 5  deber dar como resultado Error se nesecitan dos numeros para ejecutar la funcion", ()=>{
         expect(funtions.addFuntion(5)).toBe("Error se nesecitan dos numeros para ejecutar la funcion");

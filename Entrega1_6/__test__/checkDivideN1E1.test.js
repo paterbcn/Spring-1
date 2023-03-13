@@ -2,15 +2,9 @@ const funtions = require("../app/checkDivideN1E1.js")
 
 
 
-describe("no se dan los parametros correctos"), ()=> {
+describe("se pasa un  parametro incorrecto a la funcion"), ()=> {
 
-  test("calculo  y el resultado se necesita un numero", async ()=>{
-    try{
-      const resul = await funtions.divide()
-      expect(resul).toBe("divisible x 2")
-    }catch(err){expect(err).toBe("se necesita un numero")}
- })
-
+  
   test("calculo a y el resultado se necesita un numero", async ()=>{
     try{
       const resul = await funtions.divide("a")
@@ -21,7 +15,22 @@ describe("no se dan los parametros correctos"), ()=> {
 }
 
 
-describe("se dan los paremtros correctos"), ()=> {
+describe("no se pasan todos los paramentros"), ()=> {
+
+  test("calculo  y el resultado se necesita un numero", async ()=>{
+    try{
+      const resul = await funtions.divide()
+      expect(resul).toBe("divisible x 2")
+    }catch(err){expect(err).toBe("se necesita un numero")}
+ })
+
+}
+
+
+
+
+
+describe("se pasan todos los paramentros"), ()=> {
 
   test("calculo 2 y el resultado es divisible x 2", async ()=>{
     const resul = await funtions.divide(2)
